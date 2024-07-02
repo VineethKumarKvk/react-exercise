@@ -55,6 +55,7 @@ function App() {
           </ul>
         </section>
         <h2>Time to get started!</h2>
+        <h2>This page is created just to publish in Github as git Pages</h2>
       </main>
     </div>
   );

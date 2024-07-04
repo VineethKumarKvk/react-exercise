@@ -31,13 +31,14 @@ function App() {
         <section id="core-concepts">
           <h2>Core concepts</h2>
           <ul>
-            <CoreConcept 
+            {CORE_CONCEPTS.map(coreConcept => <CoreConcept key={coreConcept.title} {...coreConcept}/>)}
+            {/* <CoreConcept 
               title="Components"
               description="The core UI building block - compose the user interface by combining multiple components."
               image={componentsImg} />
             <CoreConcept {...CORE_CONCEPTS[1]} />
             <CoreConcept {...CORE_CONCEPTS[2]}/>
-            <CoreConcept {...CORE_CONCEPTS[3]}/>
+            <CoreConcept {...CORE_CONCEPTS[3]}/> */}
           </ul>
         </section>
         <h2>Time to get started!</h2>
@@ -45,10 +46,10 @@ function App() {
         <section id="examples">
           <h2>Examples</h2>
           <menu>
-            <TabButton onSelect={() => clickHandler('components')}>Components</TabButton>
-            <TabButton onSelect={() => clickHandler('jsx')}>JSX</TabButton>
-            <TabButton onSelect={() => clickHandler('props')}>Props</TabButton>
-            <TabButton onSelect={() => clickHandler('state')}>State</TabButton>
+            <TabButton isSelected = {tabContent === 'components'} onSelect={() => clickHandler('components')}>Components</TabButton>
+            <TabButton isSelected = {tabContent === 'jsx'} onSelect={() => clickHandler('jsx')}>JSX</TabButton>
+            <TabButton isSelected = {tabContent === 'props'} onSelect={() => clickHandler('props')}>Props</TabButton>
+            <TabButton isSelected = {tabContent === 'state'} onSelect={() => clickHandler('state')}>State</TabButton>
           </menu>
         </section>
         <div id="tab-content">

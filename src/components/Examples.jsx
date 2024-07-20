@@ -1,7 +1,7 @@
 import { useState } from "react";
 import {EXAMPLES} from '../data.js'
 import TabButton from "./TabButton"; 
-
+import Section from "./Section.jsx";
 export default function Examples() {
     const [tabContent,setTabContent] = useState();
     function clickHandler(buttonName) {
@@ -19,15 +19,15 @@ export default function Examples() {
     }
     return (
     <>
-    <section id="examples">
+    <Section id="examples">
         <h2>Examples</h2>
         <menu>
-          <TabButton isSelected = {tabContent === 'components'} onSelect={() => clickHandler('components')}>Components</TabButton>
-          <TabButton isSelected = {tabContent === 'jsx'} onSelect={() => clickHandler('jsx')}>JSX</TabButton>
-          <TabButton isSelected = {tabContent === 'props'} onSelect={() => clickHandler('props')}>Props</TabButton>
-          <TabButton isSelected = {tabContent === 'state'} onSelect={() => clickHandler('state')}>State</TabButton>
+          <TabButton isSelected = {tabContent === 'components'} onClick={() => clickHandler('components')}>Components</TabButton>
+          <TabButton isSelected = {tabContent === 'jsx'} onClick={() => clickHandler('jsx')}>JSX</TabButton>
+          <TabButton isSelected = {tabContent === 'props'} onClick={() => clickHandler('props')}>Props</TabButton>
+          <TabButton isSelected = {tabContent === 'state'} onClick={() => clickHandler('state')}>State</TabButton>
         </menu>
-      </section>
+      </Section>
       <div id="tab-content">
         {tabInformation}
       </div>

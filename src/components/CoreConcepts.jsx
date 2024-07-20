@@ -1,9 +1,9 @@
 import CoreConcept from "./CoreConcept";
 import {CORE_CONCEPTS} from '../data.js'
+import Section from "./Section.jsx";
 export default function CoreConcepts() {
     return(
-        <section id="core-concepts">
-          <h2>Core concepts</h2>
+        <Section id="core-concepts" title="Core concepts">
           <ul>
             {CORE_CONCEPTS.map(coreConcept => <CoreConcept key={coreConcept.title} {...coreConcept}/>)}
             {/* <CoreConcept 
@@ -16,6 +16,6 @@ export default function CoreConcepts() {
           </ul>
             <h2>Time to get started!</h2>
             <h2>This page is created just to publish in Github as git Pages</h2>
-        </section>
+        </Section>
     );
 }
